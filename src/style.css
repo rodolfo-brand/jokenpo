@@ -1,7 +1,19 @@
-/* Nesta primeira sessao devo organizar o html  e a responsividade da pagina */
+body {
+    max-height: 100vh;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    position: relative;
+}
 
-
-/* aqui quero um body com papel de parede */
-
+.caixa {
+    background: url('https://i.postimg.cc/TY28jTqJ/bg4-ia.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /*aqui quero um container e suas configuracoes*/

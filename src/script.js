@@ -1,0 +1,1 @@
+//depois que eu organizar o html e o css vou focar em fazer a interacao de pedra papel ou tesoura com o js

@@ -16,4 +16,23 @@ body {
     align-items: center;
 }
 
-/*aqui quero um container e suas configuracoes*/
+.conteudo {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-radius: 8px;
+}
+
+.conteudo button {
+    background-color: #ff1b7b;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.conteudo button:hover {
+    background-color: #1ABC9C;
+}

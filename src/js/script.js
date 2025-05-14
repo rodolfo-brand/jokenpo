@@ -1,20 +1,13 @@
-idade = prompt("Qual a sua idade?");
-if (idade >= 18)
-    alert("Você é maior de idade! Vamos jogar Jokempo!");
-{
-    escolhaJogador = prompt("digite 1-pedra, 2-papel, ou 3-tesoura?");
-    escolhaComputador = Math.floor(Math.random() * 3) + 1;
-
-    //se der empate
-    if (escolhaJogador == escolhaComputador) {
-        alert("Empate!");
-    } else if (
-        (escolhaJogador == 1 && escolhaComputador == 3) ||
-        (escolhaJogador == 2 && escolhaComputador == 1) ||
-        (escolhaJogador == 3 && escolhaComputador == 2)
-    ) {
-        alert("Você ganhou!");
+function verificarIdade() {
+    const idade = document.getElementById('campoIdade').value;
+    const janela = document.getElementById('janelaIdade');
+    
+    if (idade >= 18) {
+        janela.style.display = 'none'; // Esconde a janela
+        iniciarJogo(); // Função que começa o jogo
     } else {
-        alert("Você perdeu!");
+        alert('Você precisa ser maior de idade para jogar!');
+        janela.style.display = 'none';
+        // Aqui você pode redirecionar ou mostrar mensagem alternativa
     }
 }

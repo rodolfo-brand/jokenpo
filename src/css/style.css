@@ -8,6 +8,11 @@ body {
     position: relative;
 }
 
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /*logo Alura */
 .logo {
     position: absolute;
@@ -66,9 +71,12 @@ body {
     border-radius: 10px;
     text-align: center;
     max-width: 90%;
+    box-shadow: 0 0 25px rgba(255,27,123,0.2);
 }
 
 .conteudo-janela input {
+    border: 2px solid #ff1b7b;
+    background: #333;
     padding: 10px;
     margin: 10px 0;
     width: 200px;

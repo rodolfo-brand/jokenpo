@@ -120,3 +120,13 @@ body {
     transform: scale(1.1);
 }
 
+.resultado-jogo {
+    font-size: 1.8em;
+    color: #1ABC9C;
+    text-shadow: 0 0 10px rgba(26,188,156,0.4);
+}
+
+.opcao-computador {
+    color: #ff1b7b;
+    font-weight: bold;
+}

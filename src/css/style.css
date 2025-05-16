@@ -100,3 +100,23 @@ body {
     background-color: #e0166b;
     transform: scale(1.05);
 }
+
+.opcoes-jogador {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.opcao-jogador {
+    border: 3px solid #ff1b7b;
+    border-radius: 50%;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.opcao-jogador:hover {
+    border-color: #1ABC9C;
+    transform: scale(1.1);
+}
+

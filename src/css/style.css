@@ -1,63 +1,31 @@
+/* ========= BASE ========= */
 body {
-    max-height: 100vh;
     background-color: black;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     color: white;
     position: relative;
+    min-height: 100vh;
 }
 
-@keyframes aparecer {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/*logo Alura */
 .logo {
     position: absolute;
     top: 20px;
     right: 20px;
     max-width: 150px;
     width: auto;
+    z-index: 10;
 }
 
-.caixa {
-    background: url('https://i.postimg.cc/TY28jTqJ/bg4-ia.jpg') no-repeat center center/cover;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.conteudo {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px 40px;
-    border-radius: 8px;
-}
-
-.conteudo button {
-    background-color: #ff1b7b;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.conteudo button:hover {
-    background-color: #1ABC9C;
-}
-
-.janela-idade {
+/* ========= MODAL IDADE ========= */
+.modal-idade {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,73 +33,179 @@ body {
     animation: aparecer 0.5s ease;
 }
 
-.conteudo-janela {
+.modal-conteudo {
     background: #1a1a1a;
-    padding: 2rem;
-    border-radius: 10px;
+    padding: 2.5rem;
+    border-radius: 15px;
     text-align: center;
     max-width: 90%;
     box-shadow: 0 0 25px rgba(255,27,123,0.2);
 }
 
-.conteudo-janela input {
-    border: 2px solid #ff1b7b;
-    background: #333;
-    padding: 10px;
-    margin: 10px 0;
-    width: 200px;
-    font-size: 1.1em;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.modal-conteudo h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5em;
 }
 
-.conteudo-janela button {
+.modal-conteudo input {
+    padding: 12px 20px;
+    margin: 15px 0;
+    width: 250px;
+    min-width: 200px;
+    font-size: 1.2em;
+    border: 2px solid #ff1b7b;
+    border-radius: 25px;
+    background: #333;
+    color: white;
+    box-sizing: border-box;
+    text-align: center;
+    outline: none;
+}
+
+.modal-conteudo input::placeholder {
+    color: #ccc;
+    opacity: 0.8;
+}
+
+.botao-primario {
     background-color: #ff1b7b;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 12px 30px;
+    border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 10px;
 }
 
-.conteudo-janela button:hover {
+.botao-primario:hover {
     background-color: #e0166b;
     transform: scale(1.05);
 }
 
+/* ========= JOGO ========= */
+.container-jogo {
+    background: url('https://i.postimg.cc/TY28jTqJ/bg4-ia.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jogo-container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 90%;
+    backdrop-filter: blur(3px);
+}
+
+.titulo-jogo {
+    font-size: 2.5em;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo-jogo {
+    font-size: 1.5em;
+    margin-bottom: 1.5rem;
+    color: #ff1b7b;
+}
+
+/* ========= BOTÕES DE JOGADA ========= */
 .opcoes-jogador {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 2rem 0;
 }
 
 .opcao-jogador {
-    border: 3px solid #ff1b7b;
+    background-color: transparent;
+    border: 3px solid rgba(255,27,123,0.5);
     border-radius: 50%;
     padding: 15px;
-    transition: all 0.3s ease;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
 }
 
 .opcao-jogador:hover {
+    background-color: rgba(26, 188, 156, 0.3);
     border-color: #1ABC9C;
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 4px 20px rgba(26, 188, 156, 0.4);
+}
+
+.opcao-jogador img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.opcao-jogador:hover img {
     transform: scale(1.1);
 }
 
-.resultado-jogo {
-    font-size: 1.8em;
-    color: #1ABC9C;
-    text-shadow: 0 0 10px rgba(26,188,156,0.4);
+/* ========= FEEDBACK ========= */
+.feedback-jogo {
+    margin-top: 2rem;
 }
 
-.opcao-computador {
+.texto-resultado {
+    font-size: 1.8em;
+    margin: 1rem 0;
+    min-height: 60px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.jogada-computador {
+    font-size: 1.2em;
     color: #ff1b7b;
+    margin: 1rem 0;
     font-weight: bold;
 }
 
+.botao-reiniciar {
+    display: none;
+    margin: 2rem auto 0;
+    background: #1ABC9C;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.1em;
+}
+
+.botao-reiniciar:hover {
+    background: #16a085;
+    transform: translateY(-2px);
+}
+
+/* ========= ANIMAÇÕES ========= */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========= RESPONSIVO ========= */
 @media (max-width: 768px) {
+    .logo {
+        max-width: 100px;
+    }
+    
     .opcoes-jogador {
         gap: 1rem;
     }
@@ -145,5 +219,34 @@ body {
     .opcao-jogador img {
         width: 50px;
         height: 50px;
+    }
+    
+    .jogo-container {
+        padding: 1.5rem;
+    }
+    
+    .opcao-jogador:hover {
+        transform: scale(1.1) translateY(-3px);
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-conteudo {
+        padding: 1.5rem;
+    }
+    
+    .modal-conteudo input {
+        width: 90%;
+        max-width: 300px;
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+    
+    .titulo-jogo {
+        font-size: 2em;
+    }
+    
+    .subtitulo-jogo {
+        font-size: 1.3em;
     }
 }

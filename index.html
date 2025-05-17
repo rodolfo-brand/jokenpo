@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./src/imagens/favicon.png">
     <link rel="stylesheet" href="./src/css/style.css">
     <title>Jo-Ken-Pô!</title>
-
 </head>
-
 <body>
-
-    <div class="janela-idade" id="janelaIdade">
-        <div class="conteudo-janela">
-            <h3>Antes de jogar...</h3>
-            <input type="number" id="campoIdade" placeholder="Digite sua idade" min="1" max="120">
-            <button onclick="verificarIdade()">Confirmar</button>
+    <!-- Modal de Verificação de Idade -->
+    <div class="modal-idade" id="modalIdade">
+        <div class="modal-conteudo">
+            <h1>Antes de jogar...</h1>
+            <input type="number" id="inputIdade" placeholder="Digite sua idade" min="1" max="120">
+            <br><br>
+            <button class="botao-primario" onclick="verificarIdade()">Confirmar</button>
         </div>
     </div>
 
     <img src="https://i.postimg.cc/GpCxYmvc/title.png" alt="Logo Alura" class="logo">
 
-<div class="opcoes-jogador">
-    <button class="opcao-jogador" data-jogada="1">
-        <img src="./src/imagens/pedra.png" alt="Pedra">
-        <img src="./src/imagens/papel.png" alt="Papel">
-        <img src="./src/imagens/tesoura.png" alt="Tesoura">
-    </button>
-</div>
-<div>
-<div id="resultado" class="resultado-jogo"></div>
-<div id="opcao-computador" class="opcao-computador"></div>
-</div>
+    <!-- Área Principal do Jogo -->
+    <main class="container-jogo">
+        <div class="jogo-container">
+            <h2 class="titulo-jogo">Jo-Ken-Pô!</h2>
+            <h3 class="subtitulo-jogo">Pedra, Papel ou Tesoura?</h3>
+            
+            <div class="opcoes-jogador">
+                <button class="opcao-jogador" data-jogada="1">
+                    <img src="./src/imagens/pedra.png" alt="Pedra">
+                </button>
+                <button class="opcao-jogador" data-jogada="2">
+                    <img src="./src/imagens/papel.png" alt="Papel">
+                </button>
+                <button class="opcao-jogador" data-jogada="3">
+                    <img src="./src/imagens/tesoura.png" alt="Tesoura">
+                </button>
+            </div>
+
+            <div class="feedback-jogo">
+                <div id="resultado" class="texto-resultado"></div>
+                <div id="jogadaComputador" class="jogada-computador"></div>
+                <button class="botao-reiniciar" onclick="reiniciarJogo()">Jogar Novamente</button>
+            </div>
+        </div>
+    </main>
 
     <script src="./src/js/script.js"></script>
 </body>
-
 </html>
